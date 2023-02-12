@@ -5,7 +5,7 @@ find_package(SFML 2.5 REQUIRED COMPONENTS graphics)
 
 file(GLOB SRC_FILES
     ./src/*.cpp
-    ./src/*/*.cpp
+    ./src/Scenes/*.cpp
 )
 
 include_directories(./include)
