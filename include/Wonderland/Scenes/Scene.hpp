@@ -9,7 +9,5 @@ public:
     Scene() = default;
     virtual ~Scene() = default;
 
-    virtual void update(float &dt) = 0;
-private:
-    
+    virtual void update(float &dt) = 0;    
 };

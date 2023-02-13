@@ -5,8 +5,7 @@
 #include "Wonderland/Scenes/SceneManager.h"
 
 class StackSceneManager :
-    public SceneManager
-{
+    public SceneManager {
 public:
     StackSceneManager() = default;
     virtual ~StackSceneManager() = default;
