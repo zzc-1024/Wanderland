@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 
-#include "Wonderland/Scenes/Scene.hpp"
+#include "Wonderland/Scenes/StackSceneManager.h"
 
 int main()
 {

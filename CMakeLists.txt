@@ -8,7 +8,7 @@ file(GLOB SRC_FILES
     ./src/Scenes/*.cpp
 )
 
-include_directories(./include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(Test ${SRC_FILES})
 
