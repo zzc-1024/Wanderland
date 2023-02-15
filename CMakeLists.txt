@@ -6,6 +6,7 @@ find_package(SFML 2.5 REQUIRED COMPONENTS graphics)
 file(GLOB SRC_FILES
     ./src/*.cpp
     ./src/Scenes/*.cpp
+    ./src/Widgets/*.cpp
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
