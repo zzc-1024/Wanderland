@@ -2,9 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 
-class Scene :
-    sf::Drawable,
-    sf::Transformable {
+class Scene : 
+    public sf::Drawable,
+    public sf::Transformable {
 public:
     Scene() = default;
     virtual ~Scene() = default;
