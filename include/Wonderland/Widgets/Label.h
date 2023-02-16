@@ -1,14 +1,7 @@
-/*
- * @author: zzc-1024 1977309465@qq.com
- * @Date: 2023-02-13 15:52:19
- * @LastEditors: zzc-1024 1977309465@qq.com
- * @LastEditTime: 2023-02-15 21:26:45
- * @FilePath: \Wonderland\include\Wonderland\Widgets\Label.h
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 #pragma once
 
 #include <iostream>
+#include <optional>
 
 #include "Wonderland/Widgets/Widget.hpp"
 #include "Wonderland/Utilities/SetOrigin.hpp"
@@ -17,7 +10,7 @@ class Label :
     public Widget {
 public:
     Label();
-    Label(sf::String string);
+    Label(sf::String string, sf::Font font);
     virtual ~Label() = default;
     void setText(sf::String string);
     sf::String getText() const;
@@ -32,6 +25,7 @@ public:
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+    sf::Font _font;
     sf::Text _text;
     sf::RectangleShape _rectangleShape;
 };

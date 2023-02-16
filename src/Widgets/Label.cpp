@@ -2,10 +2,13 @@
 
 Label::Label() {
     Utilities::setCenter(_text);
+    Utilities::setCenter(_rectangleShape);
 }
 
-Label::Label(sf::String string) : 
+Label::Label(sf::String string, sf::Font font) : 
     Label() {
+    _font = font;
+    _text.setFont(font);
     _text.setString(string);
     _rectangleShape.setSize({_text.getGlobalBounds().width, _text.getGlobalBounds().height});
 }
@@ -20,20 +23,21 @@ sf::String Label::getText() const {
 }
 
 void Label::setFont(sf::Font font) {
+    _font = font;
     _text.setFont(font);
     _rectangleShape.setSize({_text.getGlobalBounds().width, _text.getGlobalBounds().height});
 }
 
 sf::Font Label::getFont() const {
-    return _text.getFont();
+    return _font;
 }
 
 void Label::setTextColor(sf::Color color) {
-    _text.setColor(color);
+    _text.setFillColor(color);
 }
 
 sf::Color Label::getTextColor() const {
-    return _text.getColor();
+    return _text.getFillColor();
 }
 
 void Label::setBackGroundColor(sf::Color color) {
@@ -44,12 +48,12 @@ sf::Color Label::getBackGroundColor() const {
     return _rectangleShape.getFillColor();
 }
 
-virtual void Label::update(float &dt) override {
+void Label::update(float &dt) {
     _text.setPosition(getPosition());
     _rectangleShape.setPosition(getPosition());
 }
 
-virtual void Label::draw(sf::RenderTarget& target, sf::RenderStates states) const override {
+void Label::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     states.transform *= getTransform();
     states.texture = nullptr;
     target.draw(_rectangleShape, states);
