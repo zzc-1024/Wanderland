@@ -9,11 +9,12 @@ public:
         BothHands
     };
     Item() = default;
+    Item(ItemUseType itemUseType);
     ~Item() = default;
     virtual void mainUse() = 0;
     virtual void SecondUse() = 0;
     ItemUseType getItemUseType() const;
 
 private:
-    ItemUseType itemUseType;
+    ItemUseType _itemUseType;
 };
